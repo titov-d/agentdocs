@@ -12,8 +12,10 @@ export const MAX_RESULTS = 8;
 /**
  * Freshness policy: a doc must be re-verified against its source at least this
  * often, even if the source hasn't changed. Used by scripts/check-freshness.ts.
+ * 90 days (quarterly) suits the project's low-maintenance posture; real upstream
+ * changes are still caught weekly by the drift check regardless of this ceiling.
  */
-export const MAX_VERIFIED_AGE_DAYS = 30;
+export const MAX_VERIFIED_AGE_DAYS = 90;
 /** Characters of context shown around the first match in a snippet. */
 export const SNIPPET_RADIUS = 240;
 
